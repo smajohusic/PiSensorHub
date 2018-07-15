@@ -32,10 +32,10 @@
             .done(function (data) {
                 var jsonObj = JSON.parse(data);
 
-                console.log(jsonObj);
-
-                $('.temp').text(jsonObj.temperature);
-                $('.humid').text(jsonObj.humidity);
+                if (jsonObj !== null) {
+                    $('.temp').text(jsonObj.temperature);
+                    $('.humid').text(jsonObj.humidity);
+                }
             });
     };
 
@@ -44,7 +44,7 @@
 
         setInterval(function () {
             updateTemperatureAndHumidity();
-        }, 60000); // Every Minute
+        }, 30000);
     });
 </script>
 
