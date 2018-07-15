@@ -12,10 +12,7 @@ def main():
 
 @app.route('/api/temperature-and-humidity')
 def temperatureAdnHumidity():
-    sensor = Adafruit_DHT.DHT22
-    pin = 23
-
-    humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+    humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, 4)
 
     if humidity is not None and temperature is not None:
         return jsonify({

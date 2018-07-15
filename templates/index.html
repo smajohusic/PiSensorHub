@@ -27,6 +27,8 @@
 </body>
 
 <script>
+    var _self = this;
+
     function updateTemperatureAndHumidity() {
         $.ajax('/api/temperature-and-humidity')
             .done(function (data) {
@@ -36,7 +38,10 @@
     };
 
     $(document).ready(function(){
-        updateTemperatureAndHumidity();
+
+        setInterval(function () {
+            updateTemperatureAndHumidity();
+        }, 1000);
     });
 </script>
 
