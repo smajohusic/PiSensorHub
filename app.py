@@ -15,10 +15,6 @@ def temperatureAdnHumidity():
     humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, 4)
 
     if humidity is not None and temperature is not None:
-        data = []
-        data[0]('{0:0.1f}'.format(temperature))
-        data[1]('{1:0.1f}'.format(humidity))
-
         return json.dumps({'temperature': '{0:0.1f}'.format(temperature), 'humidity': '{1:0.1f}'.format(humidity)});
 
     return null
