@@ -27,13 +27,11 @@
 </body>
 
 <script>
-    var _self = this;
-
     function updateTemperatureAndHumidity() {
         $.ajax('/api/temperature-and-humidity')
             .done(function (data) {
                 $('.temp').text(data);
-                console.log('Done executed');
+                console.log(data);
             });
     };
 
