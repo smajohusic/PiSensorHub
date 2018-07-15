@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, json
 import sys
 import time
 import Adafruit_DHT
@@ -15,10 +15,14 @@ def temperatureAdnHumidity():
     humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, 4)
 
     if humidity is not None and temperature is not None:
-        return jsonify({
-                'temperature': '{0:0.1f}'.format(temperature),
-                'humidity': '{1:0.1f}'.format(humidity),
-            })
+        data = [{
+            'temperature': '{0:0.1f}'.format(temperature),
+            'humidity': '{1:0.1f}'.format(humidity),
+        }]
+
+        jsonString = json.dumps(data)
+
+        return jsonify(data=jsonString)
 
     return null
 
