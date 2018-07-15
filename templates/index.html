@@ -31,9 +31,11 @@
 
 <script>
     function updateTemperatureAndHumidity() {
-        $.get('/api/temperature-and-humidity', function(response) {
-            $('.temp').text(response)
-        }, 'json');
+        $.ajax('/api/temperature-and-humidity')
+            .done(function (data) {
+                $('.temp').text(data);
+                console.log('Done executed');
+            });
     };
 
     $(document).ready(function(){

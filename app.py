@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import sys
 import time
-import Adafruit_DHT
+#import Adafruit_DHT
 
 app = Flask(__name__)
 app.debug = True
