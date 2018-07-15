@@ -19,9 +19,7 @@ def temperatureAdnHumidity():
         data[0]('{0:0.1f}'.format(temperature))
         data[1]('{1:0.1f}'.format(humidity))
 
-        jsonString = json.dumps(data)
-
-        return jsonify(data=jsonString)
+        return json.dumps({'temperature': '{0:0.1f}'.format(temperature), 'humidity': '{1:0.1f}'.format(humidity)});
 
     return null
 
