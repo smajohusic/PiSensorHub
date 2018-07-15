@@ -30,10 +30,8 @@
     function updateTemperatureAndHumidity() {
         $.ajax('/api/temperature-and-humidity')
             .done(function (data) {
-                if (data !== null) {
-                    $('.temp').text(data.temperature);
-                    $('.humid').text(data.humidity);
-                }
+                $('.temp').text(data.temperature);
+                $('.humid').text(data.humidity);
             });
     };
 
