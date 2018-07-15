@@ -16,8 +16,8 @@ def temperatureAdnHumidity():
 
     if humidity is not None and temperature is not None:
         data = []
-        data['temperature']('{0:0.1f}'.format(temperature))
-        data['humidity']('{1:0.1f}'.format(humidity))
+        data.append('{0:0.1f}'.format(temperature))
+        data.append('{1:0.1f}'.format(humidity))
 
         jsonString = json.dumps(data)
 
