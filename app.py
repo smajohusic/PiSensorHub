@@ -19,8 +19,8 @@ def temperatureAdnHumidity():
 
     if humidity is not None and temperature is not None:
         return jsonify({
-                'temperature' => '{0:0.1f}'.format(temperature),
-                'humidity' => '{1:0.1f}'.format(humidity),
+                'temperature': '{0:0.1f}'.format(temperature),
+                'humidity': '{1:0.1f}'.format(humidity),
             })
 
     return null
