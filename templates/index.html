@@ -30,16 +30,19 @@
     function updateTemperatureAndHumidity() {
         $.ajax('/api/temperature-and-humidity')
             .done(function (data) {
-                $('.temp').text(data);
-                console.log(data);
+                if (data !== null) {
+                    $('.temp').text(data.temperature);
+                    $('.humid').text(data.humidity);
+                }
             });
     };
 
     $(document).ready(function(){
+        updateTemperatureAndHumidity();
 
         setInterval(function () {
             updateTemperatureAndHumidity();
-        }, 3000);
+        }, 60000); // Every Minute
     });
 </script>
 
